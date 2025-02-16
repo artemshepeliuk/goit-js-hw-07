@@ -26,15 +26,19 @@ const images = [
 ];
 
 const ul = document.querySelector(".gallery")
+const fragment = document.createDocumentFragment();
 
 images.forEach(image => {
-      const li = document.createElement("li");
+  const li = document.createElement("li");
 
-      const img = document.createElement("img");
-      img.src = image.url;
-      img.alt = image.alt;
+  const img = document.createElement("img");
+  img.src = image.url;
+  img.alt = image.alt;
+  img.classList.add("gallery-img");
 
-      li.append(img);
+  li.append(img);
+  fragment.append(li);
 
-      ul.append(li);
 });
+    
+ul.append(fragment);
